@@ -1,0 +1,11 @@
+Date,Region,Salesperson,Product,Units Sold,Revenue
+2025-01-01,East,John,Widget A,10,250
+2025-01-02,West,Alice,Widget B,5,150
+2025-01-03,North,Bob,Widget A,8,200
+2025-01-04,South,Eve,Widget C,12,360
+2025-01-05,East,John,Widget B,7,210
+2025-01-06,West,Alice,Widget C,9,270
+2025-01-07,North,Bob,Widget B,4,120
+2025-01-08,South,Eve,Widget A,6,150
+2025-01-09,East,John,Widget C,11,330
+2025-01-10,West,Alice,Widget A,3,75
