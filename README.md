@@ -1,112 +1,33 @@
-🤖 CSV/Excel AI Query Bot
+# 🤖 CSV/Excel AI Assistant (Streamlit)
 
-An AI-powered assistant that lets you query CSV or Excel files in plain English.
-No coding required — just type your question, and the bot automatically writes and executes Pandas/Matplotlib code to return answers or generate charts.
+A web-based version of the CSV/Excel AI Query Bot. Upload CSV/Excel, ask questions in natural language, and see answers/charts inline.
 
-Built with Python + OpenAI API + Pandas + Matplotlib.
+## Features
+- Upload CSV/Excel
 
-🚀 Features
+- Natural language queries → pandas/matplotlib code (generated via OpenAI Responses API)
 
-📂 Upload CSV or Excel files and explore them instantly
+- Text-only mode vs Chart mode (auto-inferred from your question)
 
-📝 Natural language queries → converted into Python code automatically
+- Normalized lowercase snake_case column names for robust querying
 
-🔡 Case-insensitive column handling → all columns normalized to snake_case
+- Safe execution sandbox
 
-✨ Two intelligent modes:
+- Optional saving of charts to `/charts` with timestamped filenames
 
-Text-only → returns summaries, calculations, tables in terminal
+## Run locally
 
-Chart mode → generates and saves one matplotlib chart per request
+```bash
 
-🖼 Unique chart saving → every chart saved with timestamped filenames (charts/plot_2025MMDD_HHMMSS.png)
+pip install -r requirements.txt
 
-🔒 Safe execution → sandboxed code execution with restricted environment
+export OPENAI_API_KEY=YOUR_KEY
 
-⚡ Plug-and-play with your OpenAI API key via .env
-
-🛠 Tech Stack
-
-Python 3.9+
-
-Pandas – data analysis
-
-Matplotlib – visualizations
-
-OpenAI API – AI code generation
-
-Dotenv – environment variables
-
-📂 Project Structure
-
-    csv_ai_query_bot/
-    │
-    ├── main.py             # Core script (CLI assistant)
-    ├── requirements.txt    # Dependencies
-    ├── datasets/           # Sample CSV/Excel files
-    ├── charts/             # Auto-generated charts (created at runtime)
-    ├── .env                # API key (not committed)
-    └── README.md           # Documentation
+streamlit run streamlit_app.py
 
 
-⚡ Quickstart
+Tips
 
-1️⃣ Clone the repo
+If you don’t mention words like “chart/plot/graph”, the app will return a text answer only.
 
-    - git clone https://github.com/YOUR_USERNAME/csv_ai_query_bot.git
-
-    - cd csv_ai_query_bot
-
-2️⃣ Create a virtual environment
-
-    python -m venv .venv
-
-    source .venv/bin/activate   # Mac/Linux
-
-    # .venv\Scripts\activate    # Windows
-
-3️⃣ Install dependencies
-
-    pip install -r requirements.txt
-
-4️⃣ Add your API key to .env
-
-    OPENAI_API_KEY=your_api_key_here
-
-5️⃣ Run the bot
-
-    python main.py
-
-🎯 Usage Examples
-
-Text-only queries (no chart)
-
-    - Which salesperson sold how many total units?
-
-    - Average revenue by region
-
-Chart queries
-
-    - Plot units_sold by salesperson as a bar chart
-
-    - Give me a line chart of revenue by month
-
-📌 Future Enhancements
-
-🌐 Streamlit web interface for interactive data exploration
-
-🔍 SQL-style querying for CSVs
-
-📊 Export results to Excel/PDF
-
-
-💡 Why this project matters
-
-- Shows hands-on AI + Python + Data Analysis skills
-
-- Demonstrates ability to build real-world AI assistants for businesses
-
-- Valuable for freelancing (AI automation / data analysis gigs) and as a portfolio project   to land AI/ML roles
-
-
-⚡ This project is a showcase of turning AI + automation + data analysis into a practical tool.
+Column names are normalized, so “Revenue”, “revenue”, and “REVENUE” all work.
